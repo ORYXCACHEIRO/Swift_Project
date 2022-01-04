@@ -15,6 +15,7 @@
 		5773AD912771D9C80042C8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5773AD902771D9C80042C8AE /* Assets.xcassets */; };
 		5773AD942771D9C80042C8AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5773AD922771D9C80042C8AE /* LaunchScreen.storyboard */; };
 		5773ADA32771EC850042C8AE /* NewsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773ADA22771EC850042C8AE /* NewsTableController.swift */; };
+		65732DAB278451E800177385 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65732DAA278451E800177385 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5773AD932771D9C80042C8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5773AD952771D9C80042C8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5773ADA22771EC850042C8AE /* NewsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableController.swift; sourceTree = "<group>"; };
+		65732DAA278451E800177385 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				5773ADA22771EC850042C8AE /* NewsTableController.swift */,
+				65732DAA278451E800177385 /* TableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				5773AD892771D9C10042C8AE /* ViewController.swift in Sources */,
 				5773AD852771D9C10042C8AE /* AppDelegate.swift in Sources */,
 				5773AD872771D9C10042C8AE /* SceneDelegate.swift in Sources */,
+				65732DAB278451E800177385 /* TableViewCell.swift in Sources */,
 				5773ADA32771EC850042C8AE /* NewsTableController.swift in Sources */,
 				5773AD8F2771D9C10042C8AE /* swift_pro.xcdatamodeld in Sources */,
 			);

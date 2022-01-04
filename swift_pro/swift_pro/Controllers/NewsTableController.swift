@@ -10,21 +10,9 @@
 
 import UIKit
 
-struct Article {
-    var title: String
-    var details: String
-    var image: String
-}
+class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-class NewsTableController: ViewController, UITableViewDelegate, UITableViewDataSource {
-
-    let articles = [
-        Article(title: "Noticia", details: "Austria", image: "https://cdn.ralfebert.de/static_table_contents-719d31f2.png"),
-        Article(title: "Noticia", details: "Belgium", image: "https://cdn.ralfebert.de/static_table_contents-719d31f2.png"),
-        Article(title: "Noticia", details: "Germany", image: "https://cdn.ralfebert.de/static_table_contents-719d31f2.png"),
-        Article(title: "Noticia", details: "Greece", image: "https://cdn.ralfebert.de/static_table_contents-719d31f2.png"),
-        Article(title: "Noticia", details: "France", image: "https://cdn.ralfebert.de/static_table_contents-719d31f2.png"),
-    ]
+    var name = ["John", "Mike", "Adam", "Ricky", "Helen"]
 
     @IBOutlet weak var tableOut: UITableView!
     
@@ -37,14 +25,18 @@ class NewsTableController: ViewController, UITableViewDelegate, UITableViewDataS
         tableOut.dataSource = self
         // Do any additional setup after loading the view.
     }
-
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return name.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! TableViewCell
+        
+        cell.textLabel?.text = name[indexPath.row]
+        return cell
     }
-    
 
 }
