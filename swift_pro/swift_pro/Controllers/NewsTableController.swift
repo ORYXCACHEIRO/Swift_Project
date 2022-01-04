@@ -24,6 +24,8 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
         tableOut.delegate = self
         tableOut.dataSource = self
         // Do any additional setup after loading the view.
+        
+        tableOut.register(UINib(nibName: "TableViewCell2", bundle: nil), forCellReuseIdentifier: "newsCell2")
     }
     
     
@@ -33,9 +35,9 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell2", for: indexPath) as! TableViewCell2
         
-        cell.textLabel?.text = name[indexPath.row]
+        cell.title.text = name[indexPath.row]
         return cell
     }
 
