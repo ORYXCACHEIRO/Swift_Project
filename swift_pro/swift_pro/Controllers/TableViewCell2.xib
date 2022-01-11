@@ -34,6 +34,9 @@
                         <rect key="frame" x="327" y="4" width="31" height="25"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="star" catalog="system" title=""/>
+                        <connections>
+                            <action selector="favButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="r16-qE-w3I"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="20/02/2002" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ntc-5C-ChP">
                         <rect key="frame" x="147" y="18" width="67" height="14.5"/>
@@ -59,6 +62,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="date" destination="Ntc-5C-ChP" id="2SZ-mG-4I6"/>
+                <outlet property="favButtonOut" destination="fqp-F9-9dz" id="Hih-I9-hHh"/>
                 <outlet property="img" destination="kaK-zy-bp7" id="FyH-KY-9jC"/>
                 <outlet property="title" destination="Xbs-Id-1m0" id="PGw-LZ-CvI"/>
             </connections>
