@@ -12,7 +12,8 @@ import UIKit
 
 class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var name = ["John", "Mike", "Adam", "Ricky", "Helen"]
+    var name = ["Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn", "Mike", "Adam", "Ricky", "Helen"]
+    let url = URL(string: "https://cdn.cocoacasts.com/cc00ceb0c6bff0d536f25454d50223875d5c79f1/above-the-clouds.jpg")!
 
     @IBOutlet weak var tableOut: UITableView!
     
@@ -38,6 +39,11 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell2", for: indexPath) as! TableViewCell2
         
         cell.title.text = name[indexPath.row]
+        if let data = try? Data(contentsOf: url) {
+               // Create Image and Update Image View
+            cell.img.image = UIImage(data: data)
+        }
+        
         return cell
     }
 
