@@ -18,6 +18,7 @@
 		65732DAB278451E800177385 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65732DAA278451E800177385 /* TableViewCell.swift */; };
 		65732DAE278464D600177385 /* TableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65732DAC278464D600177385 /* TableViewCell2.swift */; };
 		65732DAF278464D600177385 /* TableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65732DAD278464D600177385 /* TableViewCell2.xib */; };
+		65EBC03F279DD5410060D109 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EBC03E279DD5410060D109 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		65732DAA278451E800177385 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		65732DAC278464D600177385 /* TableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell2.swift; sourceTree = "<group>"; };
 		65732DAD278464D600177385 /* TableViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell2.xib; sourceTree = "<group>"; };
+		65EBC03E279DD5410060D109 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				5773AD922771D9C80042C8AE /* LaunchScreen.storyboard */,
 				5773AD952771D9C80042C8AE /* Info.plist */,
 				5773AD8D2771D9C10042C8AE /* swift_pro.xcdatamodeld */,
+				65EBC03E279DD5410060D109 /* API.swift */,
 			);
 			path = swift_pro;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				5773AD872771D9C10042C8AE /* SceneDelegate.swift in Sources */,
 				65732DAB278451E800177385 /* TableViewCell.swift in Sources */,
 				5773ADA32771EC850042C8AE /* NewsTableController.swift in Sources */,
+				65EBC03F279DD5410060D109 /* API.swift in Sources */,
 				5773AD8F2771D9C10042C8AE /* swift_pro.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
