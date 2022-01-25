@@ -13,6 +13,7 @@ final class API{
     
     struct Constants {
         static let topHeadlinesURL = URL(string: "https://api.spaceflightnewsapi.net/v3/articles?_limit=10")
+        static let search = "https://api.spaceflightnewsapi.net/v3/articles?_limit=10&title_contains="
     }
     
     private init(){
@@ -21,6 +22,37 @@ final class API{
     
     public func getStories(completion: @escaping (Result<[Article], Error>) -> Void){
         guard let url = Constants.topHeadlinesURL else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            
+            else if let data = data {
+                do {
+                    let result = try JSONDecoder().decode([Article].self, from: data)
+                    
+                    print("Artigos: \(result.count)")
+                    completion(.success(result))
+                }
+                catch {
+                    completion(.failure(error))
+                }
+            }
+        }
+        
+        task.resume()
+        
+    }
+    
+    public func searchArticles(with query: String, completion: @escaping (Result<[Article], Error>) -> Void){
+        guard !query.trimmingCharacters(in: .whitespaces).isEmpty else {
+            return
+        }
+        let search = Constants.search + query
+        guard let url = URL(string: search) else {
             return
         }
         
