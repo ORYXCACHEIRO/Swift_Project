@@ -16,6 +16,7 @@ import UIKit
 class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private var viewModals = [CellViewModel]()
+    private var articles = [Article]()
 
     @IBOutlet weak var tableOut: UITableView!
     
@@ -32,6 +33,9 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
         API.shared.getStories{ [weak self] result in
             switch result{
             case .success(let result):
+                result.forEach { item in
+                    self?.articles.append(item)
+                }
                 self?.viewModals = result.compactMap({
                     CellViewModel(id: $0.id, title: $0.title, imageUrl: $0.imageUrl, newsSite: $0.newsSite, publishedAt: String($0.publishedAt.prefix(10)))
                 })
@@ -40,15 +44,28 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
                 break
             case .failure(let error):
-                print(error)
+                print (error)
                 break
             }
         }
+        
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        //tableView.deselectRow(at: indexPath, animated: true)
+        
+        //let vc = ArticleViewController(article: article)
+        print(articles[ (tableOut.indexPathForSelectedRow?.row)!])
+        performSegue(withIdentifier: "articleDet", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        //let article = articles[indexPath.row]
+        if let destination = segue.destination as? ArticleViewController{
+            destination.article = articles[ (tableOut.indexPathForSelectedRow?.row)!]
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -84,5 +84,6 @@ struct Article: Codable {
   let title: String
   let imageUrl: String
   let newsSite: String
+  let summary: String
   let publishedAt: String
 }
