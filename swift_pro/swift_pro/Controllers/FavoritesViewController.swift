@@ -1,25 +1,22 @@
 //
-//  NewsTableController.swift
+//  FavoritesViewController.swift
 //  swift_pro
 //
-//  Created by ci on 21/12/2021.
+//  Created by Daniel on 28/01/2022.
 //
 
 import UIKit
 
-
-class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class FavoritesViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    
     private var viewModals = [CellViewModel]()
     private var articles = [Article]()
 
     @IBOutlet weak var tableOut: UITableView!
     
-    // MARK: - Table view data source
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableOut.delegate = self
         tableOut.dataSource = self
         // Do any additional setup after loading the view.
@@ -43,17 +40,17 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
                 break
             }
         }
-        
     }
     
+    //favItems
     
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tableView.deselectRow(at: indexPath, animated: true)
         
         //let vc = ArticleViewController(article: article)
         //print(articles[ (tableOut.indexPathForSelectedRow?.row)!])
-        performSegue(withIdentifier: "articleDet", sender: self)
+        performSegue(withIdentifier: "favItems", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

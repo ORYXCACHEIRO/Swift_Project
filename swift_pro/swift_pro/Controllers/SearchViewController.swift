@@ -51,14 +51,14 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
             }
         }
         
-        print(searchOut.text!)
+        //print(searchOut.text!)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tableView.deselectRow(at: indexPath, animated: true)
         
         //let vc = ArticleViewController(article: article)
-        print(articles[ (tableOut.indexPathForSelectedRow?.row)!])
+        //print(articles[ (tableOut.indexPathForSelectedRow?.row)!])
         performSegue(withIdentifier: "articleRes", sender: self)
     }
     
@@ -78,6 +78,7 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell2", for: indexPath) as! TableViewCell2
         
+        cell.article = articles[indexPath.row]
         cell.configure(with: viewModals[indexPath.row])
         
         //if let data = try? Data(contentsOf: url) {

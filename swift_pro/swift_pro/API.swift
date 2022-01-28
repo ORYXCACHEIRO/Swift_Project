@@ -34,7 +34,7 @@ final class API{
                 do {
                     let result = try JSONDecoder().decode([Article].self, from: data)
                     
-                    print("Artigos: \(result.count)")
+                    //print("Artigos: \(result.count)")
                     completion(.success(result))
                 }
                 catch {

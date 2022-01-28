@@ -48,7 +48,6 @@
                 <constraints>
                     <constraint firstItem="Xbs-Id-1m0" firstAttribute="top" secondItem="Ntc-5C-ChP" secondAttribute="bottom" constant="10" id="17B-mb-QtY"/>
                     <constraint firstItem="kaK-zy-bp7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="2fG-i7-FiT"/>
-                    <constraint firstItem="fqp-F9-9dz" firstAttribute="leading" secondItem="Ntc-5C-ChP" secondAttribute="trailing" constant="75" id="70W-5S-lKl"/>
                     <constraint firstAttribute="trailing" secondItem="fqp-F9-9dz" secondAttribute="trailing" constant="12" id="9gx-FT-kXp"/>
                     <constraint firstAttribute="bottom" secondItem="kaK-zy-bp7" secondAttribute="bottom" constant="17" id="Enk-Ub-af4"/>
                     <constraint firstAttribute="bottom" secondItem="Xbs-Id-1m0" secondAttribute="bottom" constant="17" id="Gy8-71-XeB"/>
@@ -56,7 +55,7 @@
                     <constraint firstItem="kaK-zy-bp7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="dmX-sj-GCI"/>
                     <constraint firstItem="Ntc-5C-ChP" firstAttribute="leading" secondItem="kaK-zy-bp7" secondAttribute="trailing" constant="23" id="msN-0K-sQl"/>
                     <constraint firstAttribute="trailing" secondItem="Xbs-Id-1m0" secondAttribute="trailing" constant="27" id="pL8-rT-fpv"/>
-                    <constraint firstItem="fqp-F9-9dz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="xkS-35-LWo"/>
+                    <constraint firstItem="fqp-F9-9dz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xkS-35-LWo"/>
                     <constraint firstItem="Ntc-5C-ChP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="yQG-k4-H7o"/>
                 </constraints>
             </tableViewCellContentView>
