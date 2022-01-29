@@ -20,11 +20,22 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableOut.register(UINib(nibName: "TableViewCell2", bundle: nil), forCellReuseIdentifier: "newsCell2")
         tableOut.delegate = self
         tableOut.dataSource = self
+        tableOut.refreshControl = UIRefreshControl()
+        tableOut.refreshControl?.addTarget(self, action: #selector(pullRefresh), for: .valueChanged)
         // Do any additional setup after loading the view.
         
-        tableOut.register(UINib(nibName: "TableViewCell2", bundle: nil), forCellReuseIdentifier: "newsCell2")
+        getItems()
+        
+    }
+    
+    @objc func pullRefresh(){
+        self.getItems()
+    }
+    
+    func getItems(){
         API.shared.getStories{ [weak self] result in
             switch result{
             case .success(let result):
@@ -34,7 +45,8 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
                 self?.viewModals = result.compactMap({
                     CellViewModel(id: $0.id, title: $0.title, imageUrl: $0.imageUrl, newsSite: $0.newsSite, publishedAt: String($0.publishedAt.prefix(10)))
                 })
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    self?.tableOut.refreshControl?.endRefreshing()
                     self?.tableOut.reloadData()
                 }
                 break
@@ -43,7 +55,6 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
                 break
             }
         }
-        
     }
     
     
@@ -71,7 +82,8 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell2", for: indexPath) as! TableViewCell2
-
+        
+        //print(articles[indexPath.row])
         cell.article = articles[indexPath.row]
         cell.configure(with: viewModals[indexPath.row])
         

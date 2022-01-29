@@ -51,11 +51,11 @@ class TableViewCell2: UITableViewCell {
         super.didMoveToSuperview()
         if superview != nil {
             getFavorites(id: article!.id)
-             if(isFavorite==true){
-                 favButtonOut.setImage(UIImage.init(systemName: "star.fill"), for: .normal)
-            } else {
-                favButtonOut.setImage(UIImage.init(systemName: "star"), for: .normal)
-            }
+            if(isFavorite==true){
+                favButtonOut.setImage(UIImage.init(systemName: "star.fill"), for: .normal)
+           } else {
+               favButtonOut.setImage(UIImage.init(systemName: "star"), for: .normal)
+           }
         }
     }
 
@@ -68,6 +68,7 @@ class TableViewCell2: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
     }
     
     
@@ -91,22 +92,22 @@ class TableViewCell2: UITableViewCell {
     }
     
     func getFavorites(id: Int){
-        //print(id)
         let fetch = FavoriteArticles.fetchRequest() as NSFetchRequest<FavoriteArticles>
-        let pred = NSPredicate(format: "id == \(id)")
-        //print(pred)
+        let pred = NSPredicate(format: "id == %i", id)
         fetch.predicate = pred
-        print(fetch)
         do{
             let data = try context.fetch(fetch)
             
+            
             if(data.isEmpty==false){
+                //print(data[0].title)
                 isFavorite = true
                 favorieItem = data.first
-                print("aaaaaa")
+                favButtonOut.setImage(UIImage.init(systemName: "star.fill"), for: .normal)
+                print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
             }
         }
-        catch{
+        catch {
            print("erro")
         }
     }
@@ -150,9 +151,6 @@ class TableViewCell2: UITableViewCell {
     }
     
     @IBAction func favButton(_ sender: UIButton) {
-        //print(article)
-        
-        print(isFavorite)
         if(isFavorite==false){
             addFavorite()
             favButtonOut.setImage(UIImage.init(systemName: "star.fill"), for: .normal)

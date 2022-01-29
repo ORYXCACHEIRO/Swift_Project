@@ -48,14 +48,6 @@ class ArticleViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        if self.isMovingFromParent{
-            print("xauuuuuu")
-        }
-    }
-    
     func getFavorites(id: Int){
         //print(id)
         let fetch = FavoriteArticles.fetchRequest() as NSFetchRequest<FavoriteArticles>
@@ -116,7 +108,7 @@ class ArticleViewController: UIViewController {
     
 
     @IBAction func button(_ sender: UIButton) {
-        print(isFavorite)
+        //print(isFavorite)
         if(isFavorite==false){
             addFavorite()
             buttonOut.setImage(UIImage.init(systemName: "star.fill"), for: .normal)

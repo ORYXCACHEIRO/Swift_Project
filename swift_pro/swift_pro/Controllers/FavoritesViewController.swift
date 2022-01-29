@@ -11,40 +11,55 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
     
     private var viewModals = [CellViewModel]()
     private var articles = [Article]()
+    var favs : [FavoriteArticles]?
+    let context = (UIApplication.shared.delegate as!AppDelegate).persistentContainer.viewContext
 
     @IBOutlet weak var tableOut: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableOut.delegate = self
-        tableOut.dataSource = self
-        // Do any additional setup after loading the view.
         
         tableOut.register(UINib(nibName: "TableViewCell2", bundle: nil), forCellReuseIdentifier: "newsCell2")
-        API.shared.getStories{ [weak self] result in
-            switch result{
-            case .success(let result):
-                result.forEach { item in
-                    self?.articles.append(item)
-                }
-                self?.viewModals = result.compactMap({
-                    CellViewModel(id: $0.id, title: $0.title, imageUrl: $0.imageUrl, newsSite: $0.newsSite, publishedAt: String($0.publishedAt.prefix(10)))
-                })
-                DispatchQueue.main.async {
-                    self?.tableOut.reloadData()
-                }
-                break
-            case .failure(let error):
-                print (error)
-                break
+        tableOut.delegate = self
+        tableOut.dataSource = self
+        tableOut.refreshControl = UIRefreshControl()
+        tableOut.refreshControl?.addTarget(self, action: #selector(pullRefresh), for: .valueChanged)
+        // Do any additional setup after loading the view.
+        
+        
+        getFavs()
+        
+    }
+    
+    @objc func pullRefresh(){
+        self.getFavs()
+    }
+    
+    func getFavs(){
+        do{
+            self.favs = try context.fetch(FavoriteArticles.fetchRequest())
+            
+            favs?.forEach { item in
+                let articleee = Article(id: Int(item.id), title: item.title!, imageUrl: item.imageUrl!, newsSite: item.newsSite!, summary: item.summary!, publishedAt: String(item.publishedAt!.prefix(10)))
+                
+                self.articles.append(articleee)
             }
+            
+            self.viewModals = (favs?.compactMap({
+                CellViewModel(id: Int($0.id), title: $0.title!, imageUrl: $0.imageUrl!, newsSite: $0.newsSite!, publishedAt: String($0.publishedAt!.prefix(10)))
+            }))!
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.tableOut.refreshControl?.endRefreshing()
+                self.tableOut.reloadData()
+            }
+                
+            
+        }catch{
+            print("erro")
         }
     }
     
-    //favItems
-    
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tableView.deselectRow(at: indexPath, animated: true)
         
