@@ -83,7 +83,7 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell2", for: indexPath) as! TableViewCell2
         
-        //print(articles[indexPath.row])
+        //print(indexPath.row])
         cell.article = articles[indexPath.row]
         cell.configure(with: viewModals[indexPath.row])
         
