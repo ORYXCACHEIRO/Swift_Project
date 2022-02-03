@@ -18,7 +18,7 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title="Favorites"
         tableOut.register(UINib(nibName: "TableViewCell2", bundle: nil), forCellReuseIdentifier: "newsCell2")
         tableOut.delegate = self
         tableOut.dataSource = self
@@ -40,7 +40,7 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
             self.favs = try context.fetch(FavoriteArticles.fetchRequest())
             
             favs?.forEach { item in
-                let articleee = Article(id: Int(item.id), title: item.title!, imageUrl: item.imageUrl!, newsSite: item.newsSite!, summary: item.summary!, publishedAt: String(item.publishedAt!.prefix(10)), url: item.url!)
+                let articleee = Article(id: Int(item.id), title: item.title!, imageUrl: item.imageUrl!, newsSite: item.newsSite!, summary: item.summary!, publishedAt: String(item.publishedAt!.prefix(10)), url: item.url ?? "aaaa")
                 
                 self.articles.append(articleee)
             }
