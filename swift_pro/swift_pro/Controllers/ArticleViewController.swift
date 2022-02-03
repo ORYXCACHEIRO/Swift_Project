@@ -25,6 +25,7 @@ class ArticleViewController: UIViewController {
         super.viewDidLoad()
         
         //print(article)
+        self.title = "Article"
         
         titleOut.text = article?.title
         summaryOut.text = article?.summary
@@ -118,6 +119,17 @@ class ArticleViewController: UIViewController {
         }
     }
     
+    @IBAction func qrButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "qrcode", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        //let article = articles[indexPath.row]
+        if let destination = segue.destination as? QrCodeViewController{
+            destination.qrcode = article?.url
+        }
+    }
     /*
     // MARK: - Navigation
 

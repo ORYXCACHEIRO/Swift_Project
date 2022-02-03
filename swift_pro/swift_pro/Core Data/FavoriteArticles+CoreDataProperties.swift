@@ -22,7 +22,7 @@ extension FavoriteArticles {
     @NSManaged public var publishedAt: String?
     @NSManaged public var summary: String?
     @NSManaged public var title: String?
-
+    @NSManaged public var url: String?
 }
 
 extension FavoriteArticles : Identifiable {

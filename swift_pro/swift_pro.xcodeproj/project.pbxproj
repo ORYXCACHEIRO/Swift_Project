@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		348641C127AC1D56000A5039 /* QrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348641C027AC1D56000A5039 /* QrCodeViewController.swift */; };
 		5773AD852771D9C10042C8AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773AD842771D9C10042C8AE /* AppDelegate.swift */; };
 		5773AD872771D9C10042C8AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773AD862771D9C10042C8AE /* SceneDelegate.swift */; };
 		5773AD892771D9C10042C8AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773AD882771D9C10042C8AE /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		348641C027AC1D56000A5039 /* QrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeViewController.swift; sourceTree = "<group>"; };
 		5773AD812771D9C10042C8AE /* swift_pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_pro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5773AD842771D9C10042C8AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5773AD862771D9C10042C8AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,8 +41,8 @@
 		6501685827A1A0C4008AD551 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		65732DAC278464D600177385 /* TableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell2.swift; sourceTree = "<group>"; };
 		65732DAD278464D600177385 /* TableViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell2.xib; sourceTree = "<group>"; };
-		658A5ED727A33AC70002D165 /* FavoriteArticles+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavoriteArticles+CoreDataClass.swift"; path = "swift_pro/Core Data/FavoriteArticles+CoreDataClass.swift"; sourceTree = "<group>"; };
-		658A5ED827A33AC70002D165 /* FavoriteArticles+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavoriteArticles+CoreDataProperties.swift"; path = "swift_pro/Core Data/FavoriteArticles+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		658A5ED727A33AC70002D165 /* FavoriteArticles+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteArticles+CoreDataClass.swift"; sourceTree = "<group>"; };
+		658A5ED827A33AC70002D165 /* FavoriteArticles+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteArticles+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		65EBC03E279DD5410060D109 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		65F6FED827A483DB005DD45B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		65FF32CC27A0AD3F00F49049 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -60,8 +62,6 @@
 		5773AD782771D9C10042C8AE = {
 			isa = PBXGroup;
 			children = (
-				658A5ED727A33AC70002D165 /* FavoriteArticles+CoreDataClass.swift */,
-				658A5ED827A33AC70002D165 /* FavoriteArticles+CoreDataProperties.swift */,
 				5773AD832771D9C10042C8AE /* swift_pro */,
 				5773AD822771D9C10042C8AE /* Products */,
 			);
@@ -102,6 +102,7 @@
 				65FF32CC27A0AD3F00F49049 /* SearchViewController.swift */,
 				6501685827A1A0C4008AD551 /* ArticleViewController.swift */,
 				65F6FED827A483DB005DD45B /* FavoritesViewController.swift */,
+				348641C027AC1D56000A5039 /* QrCodeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -109,6 +110,8 @@
 		650D71BD27A33803004E67E9 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				658A5ED727A33AC70002D165 /* FavoriteArticles+CoreDataClass.swift */,
+				658A5ED827A33AC70002D165 /* FavoriteArticles+CoreDataProperties.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				658A5EDA27A33AC70002D165 /* FavoriteArticles+CoreDataProperties.swift in Sources */,
 				6501685927A1A0C4008AD551 /* ArticleViewController.swift in Sources */,
 				5773AD872771D9C10042C8AE /* SceneDelegate.swift in Sources */,
+				348641C127AC1D56000A5039 /* QrCodeViewController.swift in Sources */,
 				658A5ED927A33AC70002D165 /* FavoriteArticles+CoreDataClass.swift in Sources */,
 				5773ADA32771EC850042C8AE /* NewsTableController.swift in Sources */,
 				65EBC03F279DD5410060D109 /* API.swift in Sources */,

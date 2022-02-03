@@ -19,7 +19,7 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "News"
         tableOut.register(UINib(nibName: "TableViewCell2", bundle: nil), forCellReuseIdentifier: "newsCell2")
         tableOut.delegate = self
         tableOut.dataSource = self
@@ -43,7 +43,7 @@ class NewsTableController: UIViewController, UITableViewDelegate, UITableViewDat
                     self?.articles.append(item)
                 }
                 self?.viewModals = result.compactMap({
-                    CellViewModel(id: $0.id, title: $0.title, imageUrl: $0.imageUrl, newsSite: $0.newsSite, publishedAt: String($0.publishedAt.prefix(10)))
+                    CellViewModel(id: $0.id, title: $0.title, imageUrl: $0.imageUrl, newsSite: $0.newsSite, publishedAt: String($0.publishedAt.prefix(10)), url: $0.url)
                 })
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                     self?.tableOut.refreshControl?.endRefreshing()

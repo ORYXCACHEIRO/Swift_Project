@@ -147,16 +147,26 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTJ-mz-aJD">
+                                                <rect key="frame" x="301" y="277" width="46" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system" title=""/>
+                                                <connections>
+                                                    <action selector="qrButton:" destination="eMD-cq-ur1" eventType="touchUpInside" id="JnC-97-6BT"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="uTe-0c-GVh" firstAttribute="top" secondItem="rHn-SS-53e" secondAttribute="bottom" constant="16" id="1cO-pE-N3m"/>
                                             <constraint firstAttribute="trailing" secondItem="WGn-s3-kSa" secondAttribute="trailing" constant="26" id="3hB-Mh-xj2"/>
+                                            <constraint firstItem="ESE-MX-R5Z" firstAttribute="leading" secondItem="vTJ-mz-aJD" secondAttribute="trailing" constant="3" id="8Lc-td-L6r"/>
                                             <constraint firstItem="uTe-0c-GVh" firstAttribute="leading" secondItem="PHk-dS-efu" secondAttribute="leading" constant="20" symbolic="YES" id="DvL-oa-4xX"/>
                                             <constraint firstItem="Vhc-R5-Hu3" firstAttribute="leading" secondItem="PHk-dS-efu" secondAttribute="leading" constant="32" id="FIT-xA-0Gm"/>
                                             <constraint firstAttribute="height" constant="700" id="Id0-bn-vM5"/>
                                             <constraint firstItem="WGn-s3-kSa" firstAttribute="leading" secondItem="PHk-dS-efu" secondAttribute="leading" constant="27" id="LjA-cx-mf9"/>
                                             <constraint firstItem="uTe-0c-GVh" firstAttribute="width" secondItem="PHk-dS-efu" secondAttribute="width" multiplier="0.903382" id="U5J-tu-5mS"/>
+                                            <constraint firstItem="vTJ-mz-aJD" firstAttribute="top" secondItem="WGn-s3-kSa" secondAttribute="bottom" constant="12" id="Vnh-Qs-gPh"/>
                                             <constraint firstAttribute="trailing" secondItem="rHn-SS-53e" secondAttribute="trailing" constant="26" id="Wd2-ra-Epb"/>
                                             <constraint firstItem="ESE-MX-R5Z" firstAttribute="top" secondItem="WGn-s3-kSa" secondAttribute="bottom" constant="10" id="XbR-ec-e77"/>
                                             <constraint firstItem="Vhc-R5-Hu3" firstAttribute="top" secondItem="WGn-s3-kSa" secondAttribute="bottom" constant="15" id="Y0f-0V-Uep"/>
@@ -194,11 +204,56 @@
                         <outlet property="img" destination="WGn-s3-kSa" id="NId-08-Xpm"/>
                         <outlet property="summaryOut" destination="uTe-0c-GVh" id="w6z-F3-pQl"/>
                         <outlet property="titleOut" destination="rHn-SS-53e" id="sbl-yi-CJX"/>
+                        <segue destination="dVb-fh-PFh" kind="presentation" identifier="qrcode" id="YlM-5b-Ifu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8BG-p3-pMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1425" y="151"/>
+        </scene>
+        <!--Qr Code View Controller-->
+        <scene sceneID="Msb-g5-2oc">
+            <objects>
+                <viewController id="dVb-fh-PFh" customClass="QrCodeViewController" customModule="swift_pro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qhh-Yg-FcO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AdP-2n-gie">
+                                <rect key="frame" x="62" y="150" width="291" height="508"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan This" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyv-3t-Qz6">
+                                <rect key="frame" x="121" y="86" width="172" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="Trv-xR-Y2m"/>
+                                    <constraint firstAttribute="width" constant="172" id="rO2-Td-WL1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GPU-wK-85m"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dyv-3t-Qz6" firstAttribute="leading" secondItem="GPU-wK-85m" secondAttribute="leading" constant="121" id="16P-uj-v3y"/>
+                            <constraint firstItem="AdP-2n-gie" firstAttribute="top" secondItem="GPU-wK-85m" secondAttribute="top" constant="150" id="Alb-x4-6B2"/>
+                            <constraint firstItem="GPU-wK-85m" firstAttribute="trailing" secondItem="AdP-2n-gie" secondAttribute="trailing" constant="61" id="CHc-P8-OaW"/>
+                            <constraint firstItem="AdP-2n-gie" firstAttribute="leading" secondItem="GPU-wK-85m" secondAttribute="leading" constant="62" id="KoX-4O-iEE"/>
+                            <constraint firstItem="GPU-wK-85m" firstAttribute="bottom" secondItem="AdP-2n-gie" secondAttribute="bottom" constant="150" id="OIS-bX-viU"/>
+                            <constraint firstItem="Dyv-3t-Qz6" firstAttribute="top" secondItem="GPU-wK-85m" secondAttribute="top" constant="86" id="ZQ0-oP-xgX"/>
+                            <constraint firstItem="AdP-2n-gie" firstAttribute="top" secondItem="Dyv-3t-Qz6" secondAttribute="bottom" constant="38" id="a3r-AF-n8l"/>
+                            <constraint firstItem="GPU-wK-85m" firstAttribute="trailing" secondItem="Dyv-3t-Qz6" secondAttribute="trailing" constant="121" id="fpV-Gf-wXE"/>
+                            <constraint firstItem="AdP-2n-gie" firstAttribute="top" secondItem="Dyv-3t-Qz6" secondAttribute="bottom" constant="38" id="sJ6-lY-ANo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageOut" destination="AdP-2n-gie" id="bI6-fr-foG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OJg-X4-UC9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2353.6231884057975" y="160.71428571428569"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TqW-MO-fSz">
@@ -315,11 +370,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VNf-bG-7bG"/>
+        <segue reference="0Dc-xT-rS4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="qrcode" catalog="system" width="128" height="114"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">

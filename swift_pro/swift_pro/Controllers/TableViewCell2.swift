@@ -14,19 +14,22 @@ class CellViewModel {
     let imageUrl: String
     let newsSite: String
     let publishedAt: String
+    let url: String
     
     init(
         id: Int,
         title: String,
         imageUrl: String,
         newsSite: String,
-        publishedAt: String
+        publishedAt: String,
+        url: String
     ) {
         self.id = id
         self.title = title
         self.imageUrl = imageUrl
         self.newsSite = newsSite
         self.publishedAt = publishedAt
+        self.url = url
     }
     
 }
@@ -122,6 +125,7 @@ class TableViewCell2: UITableViewCell {
         newItem.imageUrl = article?.imageUrl
         newItem.summary = article?.summary
         newItem.publishedAt = (article?.publishedAt)!
+        newItem.url = article?.url
         
         do{
             try context.save()

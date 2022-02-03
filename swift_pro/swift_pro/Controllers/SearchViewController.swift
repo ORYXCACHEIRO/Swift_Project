@@ -18,7 +18,7 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Search"
         tableOut.delegate = self
         tableOut.dataSource = self
         searchOut.delegate = self
@@ -39,7 +39,7 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
                     self?.articles.append(item)
                 }
                 self?.viewModals = result.compactMap({
-                    CellViewModel(id: $0.id, title: $0.title, imageUrl: $0.imageUrl, newsSite: $0.newsSite, publishedAt: String($0.publishedAt.prefix(10)))
+                    CellViewModel(id: $0.id, title: $0.title, imageUrl: $0.imageUrl, newsSite: $0.newsSite, publishedAt: String($0.publishedAt.prefix(10)), url: $0.url)
                 })
                 DispatchQueue.main.async {
                     self?.tableOut.reloadData()
