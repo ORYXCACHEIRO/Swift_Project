@@ -46,7 +46,7 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
             }
             
             self.viewModals = (favs?.compactMap({
-                CellViewModel(id: Int($0.id), title: $0.title!, imageUrl: $0.imageUrl!, newsSite: $0.newsSite!, publishedAt: String($0.publishedAt!.prefix(10)), url: $0.url!)
+                CellViewModel(id: Int($0.id), title: $0.title!, imageUrl: $0.imageUrl!, newsSite: $0.newsSite!, publishedAt: String($0.publishedAt!.prefix(10)), url: $0.url ?? "")
             }))!
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {

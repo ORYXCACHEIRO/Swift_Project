@@ -79,6 +79,7 @@ class ArticleViewController: UIViewController {
         newItem.imageUrl = article?.imageUrl
         newItem.summary = article?.summary
         newItem.publishedAt = (article?.publishedAt)!
+        newItem.url = article?.url
         
         do{
             try context.save()
